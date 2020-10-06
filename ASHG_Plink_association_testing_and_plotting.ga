@@ -1,0 +1,393 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "format-version": "0.1",
+    "name": "ASHG: Plink association testing and plotting",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Plink bed"
+                }
+            ],
+            "label": "Plink bed",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 495,
+                "height": 61,
+                "left": 365,
+                "right": 565,
+                "top": 434,
+                "width": 200,
+                "x": 365,
+                "y": 434
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "f07e263a-8291-4657-9ebb-8df1d6008195",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "3eff9bd8-31bd-4661-90b0-1b26397fcfc3"
+                }
+            ]
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Plink bim"
+                }
+            ],
+            "label": "Plink bim",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 569,
+                "height": 61,
+                "left": 367,
+                "right": 567,
+                "top": 508,
+                "width": 200,
+                "x": 367,
+                "y": 508
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "f5b2a781-03ef-423c-95e9-f34934134a83",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "09e13d73-b45a-4b29-97a3-39d0c53af36e"
+                }
+            ]
+        },
+        "2": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 2,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Plink fam"
+                }
+            ],
+            "label": "Plink fam",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 647,
+                "height": 61,
+                "left": 367,
+                "right": 567,
+                "top": 586,
+                "width": 200,
+                "x": 367,
+                "y": 586
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "321ff9c4-4585-40b6-bdfb-fc0056d0750e",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "15f3fa0d-e66e-4fee-ab39-b239a4cf4442"
+                }
+            ]
+        },
+        "3": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 3,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Covar file"
+                }
+            ],
+            "label": "Covar file",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 730,
+                "height": 61,
+                "left": 580,
+                "right": 780,
+                "top": 669,
+                "width": 200,
+                "x": 580,
+                "y": 669
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "05faa114-cda4-4aa0-9b23-6d51889f6080",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "fd643ca2-c058-4a1d-be8f-6c279d90afce"
+                }
+            ]
+        },
+        "4": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 4,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Phenotype file"
+                }
+            ],
+            "label": "Phenotype file",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 834,
+                "height": 61,
+                "left": 657,
+                "right": 857,
+                "top": 773,
+                "width": 200,
+                "x": 657,
+                "y": 773
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "c7f3d25f-4762-448f-9ad2-a623aa72b238",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "0fcd405c-0036-4878-83fd-83f09299c966"
+                }
+            ]
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "Convert characters1",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "input": {
+                    "id": 3,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Convert",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 682,
+                "height": 92,
+                "left": 774,
+                "right": 974,
+                "top": 590,
+                "width": 200,
+                "x": 774,
+                "y": 590
+            },
+            "post_job_actions": {
+                "HideDatasetActionout_file1": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
+            "tool_id": "Convert characters1",
+            "tool_state": "{\"condense\": \"true\", \"convert_from\": \"s\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"strip\": \"true\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "b7ec47fc-362e-4577-9674-49370f13dbf1",
+            "workflow_outputs": []
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/plink/plink/1.9.b618+galaxy2",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "inputs|inputs|bed": {
+                    "id": 0,
+                    "output_name": "output"
+                },
+                "inputs|inputs|bim": {
+                    "id": 1,
+                    "output_name": "output"
+                },
+                "inputs|inputs|fam": {
+                    "id": 2,
+                    "output_name": "output"
+                },
+                "inputs|set_pheno|pheno": {
+                    "id": 4,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "plink",
+            "outputs": [
+                {
+                    "name": "plink_out",
+                    "type": "input"
+                },
+                {
+                    "name": "log_outfiles",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 427,
+                "height": 242,
+                "left": 1142,
+                "right": 1342,
+                "top": 185,
+                "width": 200,
+                "x": 1142,
+                "y": 185
+            },
+            "post_job_actions": {
+                "HideDatasetActionplink_out": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "plink_out"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/plink/plink/1.9.b618+galaxy2",
+            "tool_shed_repository": {
+                "changeset_revision": "66b35562554d",
+                "name": "plink",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"functions\": {\"func\": \"association\", \"__current_case__\": 5, \"assoc\": {\"assoc\": \"\", \"__current_case__\": 0}, \"adjust\": {\"adjust\": \"No\", \"__current_case__\": 0}, \"logistic\": {\"logistic\": \"Yes\", \"__current_case__\": 1, \"perm\": {\"perm\": \"No\", \"__current_case__\": 0}, \"genedrop\": \"false\", \"perm_count\": \"false\", \"dominance\": \"\", \"hide_covar\": \"true\", \"sex_covar\": \"\", \"interaction\": \"false\", \"beta\": \"false\", \"intercept\": \"false\"}, \"lambda\": \"\"}, \"inputs\": {\"inputs\": {\"filetype\": \"bfile\", \"__current_case__\": 0, \"bed\": {\"__class__\": \"ConnectedValue\"}, \"bim\": {\"__class__\": \"ConnectedValue\"}, \"fam\": {\"__class__\": \"ConnectedValue\"}}, \"set_pheno\": {\"set_pheno\": \"Yes\", \"__current_case__\": 1, \"pheno\": {\"__class__\": \"ConnectedValue\"}, \"all_pheno\": \"true\"}, \"covar_input\": {\"__class__\": \"ConnectedValue\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.9.b618+galaxy2",
+            "type": "tool",
+            "uuid": "49aabb2f-6605-401e-8e45-039a72433fa0",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "log_outfiles",
+                    "uuid": "1add9b02-07f2-4eaf-9d9b-7a794344c7e0"
+                }
+            ]
+        },
+        "7": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/plink/plink/1.9.b618+galaxy2",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "inputs|covar_input": {
+                    "id": 5,
+                    "output_name": "out_file1"
+                },
+                "inputs|inputs|bed": {
+                    "id": 0,
+                    "output_name": "output"
+                },
+                "inputs|inputs|bim": {
+                    "id": 1,
+                    "output_name": "output"
+                },
+                "inputs|inputs|fam": {
+                    "id": 2,
+                    "output_name": "output"
+                },
+                "inputs|set_pheno|pheno": {
+                    "id": 4,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "plink",
+            "outputs": [
+                {
+                    "name": "plink_out",
+                    "type": "input"
+                },
+                {
+                    "name": "assoc_outfiles",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 329,
+                "height": 262,
+                "left": 872,
+                "right": 1072,
+                "top": 67,
+                "width": 200,
+                "x": 872,
+                "y": 67
+            },
+            "post_job_actions": {
+                "HideDatasetActionplink_out": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "plink_out"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/plink/plink/1.9.b618+galaxy2",
+            "tool_shed_repository": {
+                "changeset_revision": "66b35562554d",
+                "name": "plink",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"functions\": {\"func\": \"association\", \"__current_case__\": 5, \"assoc\": {\"assoc\": \"Yes\", \"__current_case__\": 1, \"perm\": {\"perm\": \"No\", \"__current_case__\": 0}, \"genedrop\": \"false\", \"perm_count\": \"false\", \"fisher\": \"\", \"count\": \"false\"}, \"adjust\": {\"adjust\": \"No\", \"__current_case__\": 0}, \"logistic\": {\"logistic\": \"No\", \"__current_case__\": 0}, \"lambda\": \"\"}, \"inputs\": {\"inputs\": {\"filetype\": \"bfile\", \"__current_case__\": 0, \"bed\": {\"__class__\": \"ConnectedValue\"}, \"bim\": {\"__class__\": \"ConnectedValue\"}, \"fam\": {\"__class__\": \"ConnectedValue\"}}, \"set_pheno\": {\"set_pheno\": \"Yes\", \"__current_case__\": 1, \"pheno\": {\"__class__\": \"ConnectedValue\"}, \"all_pheno\": \"true\"}, \"covar_input\": {\"__class__\": \"ConnectedValue\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.9.b618+galaxy2",
+            "type": "tool",
+            "uuid": "4abecda8-8bb9-4429-96b2-9b3c71a030bf",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "assoc_outfiles",
+                    "uuid": "18f5d0a9-df46-4346-98e2-49ea6e995846"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "86363535-94d1-43cd-a567-22470656fb06",
+    "version": 9
+}

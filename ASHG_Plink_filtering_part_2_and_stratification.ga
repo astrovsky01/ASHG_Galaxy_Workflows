@@ -1,0 +1,926 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "ASHG",
+    "format-version": "0.1",
+    "name": "ASHG: Plink filtering part 2 and stratification",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Plink bed file"
+                }
+            ],
+            "label": "Plink bed file",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 333.5,
+                "height": 61,
+                "left": 414.5,
+                "right": 614.5,
+                "top": 272.5,
+                "width": 200,
+                "x": 414.5,
+                "y": 272.5
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "2dcd1774-f7e2-4d6c-888d-b2b843e7c87a",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "8df1da17-2477-4c7b-8615-ba0fe979c81a"
+                }
+            ]
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Plink bim file"
+                }
+            ],
+            "label": "Plink bim file",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 418.5,
+                "height": 61,
+                "left": 416.5,
+                "right": 616.5,
+                "top": 357.5,
+                "width": 200,
+                "x": 416.5,
+                "y": 357.5
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "2a354c94-a964-452b-bab0-3b2aae8e2cad",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "f62876b1-c814-4c31-99ba-9a25342c11c1"
+                }
+            ]
+        },
+        "2": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 2,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Plink fam file"
+                }
+            ],
+            "label": "Plink fam file",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 515.5,
+                "height": 61,
+                "left": 418.5,
+                "right": 618.5,
+                "top": 454.5,
+                "width": 200,
+                "x": 418.5,
+                "y": 454.5
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "7e3dcd71-4c8c-4ad0-8da8-5d612e1db9ea",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "419ab7dc-bc2d-4f20-99ba-f683ecd72116"
+                }
+            ]
+        },
+        "3": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 3,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Het to filter"
+                }
+            ],
+            "label": "Het to filter",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 599.5,
+                "height": 61,
+                "left": 418.5,
+                "right": 618.5,
+                "top": 538.5,
+                "width": 200,
+                "x": 418.5,
+                "y": 538.5
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "05ee7738-bf75-479e-bcb8-67cdd3a5ec21",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "d6d22038-0ab4-4b56-9197-3b0eb4c10a5b"
+                }
+            ]
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/1.1.1",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "infile": {
+                    "id": 3,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Text reformatting",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 723.5,
+                "height": 92,
+                "left": 428.5,
+                "right": 628.5,
+                "top": 631.5,
+                "width": 200,
+                "x": 428.5,
+                "y": 631.5
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutfile": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "outfile"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/1.1.1",
+            "tool_shed_repository": {
+                "changeset_revision": "e39fceb6ab85",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"code\": \"{print $1, $2, $3, $4, $5, $6, ($5 - $3)/$5}\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.0",
+            "type": "tool",
+            "uuid": "45fbdba7-f4a3-490c-a7ab-7e7c0ddc3f36",
+            "workflow_outputs": []
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/1.1.1",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "infile": {
+                    "id": 4,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Text reformatting",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 643.5,
+                "height": 92,
+                "left": 658.5,
+                "right": 858.5,
+                "top": 551.5,
+                "width": 200,
+                "x": 658.5,
+                "y": 551.5
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutfile": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "outfile"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/1.1.1",
+            "tool_shed_repository": {
+                "changeset_revision": "e39fceb6ab85",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"code\": \"{if ($7 < ([MEAN] - (3*[STDEV])) || $7 > ([MEAN] + (3*[STDEV]))){print $1,$2}}\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.0",
+            "type": "tool",
+            "uuid": "92a671ef-5a84-4223-abf2-503bcd4667f4",
+            "workflow_outputs": []
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/plink/plink/1.9.b618+galaxy0",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "functions|id_list|file": {
+                    "id": 5,
+                    "output_name": "outfile"
+                },
+                "inputs|inputs|bed": {
+                    "id": 0,
+                    "output_name": "output"
+                },
+                "inputs|inputs|bim": {
+                    "id": 1,
+                    "output_name": "output"
+                },
+                "inputs|inputs|fam": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool plink",
+                    "name": "inputs"
+                }
+            ],
+            "label": null,
+            "name": "plink",
+            "outputs": [
+                {
+                    "name": "plink_out",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 461.5,
+                "height": 212,
+                "left": 737.5,
+                "right": 937.5,
+                "top": 249.5,
+                "width": 200,
+                "x": 737.5,
+                "y": 249.5
+            },
+            "post_job_actions": {
+                "HideDatasetActionplink_out": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "plink_out"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/plink/plink/1.9.b618+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "66b35562554d",
+                "name": "plink",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"functions\": {\"func\": \"filtering\", \"__current_case__\": 0, \"id_list\": {\"func\": \"remove\", \"__current_case__\": 3, \"file\": {\"__class__\": \"RuntimeValue\"}}, \"extraction\": {\"ex_func\": \"none\", \"__current_case__\": 0}, \"chromosome\": \"\", \"excluded_chromosome\": \"\", \"extra_chromosomes\": \"false\", \"autosome\": \"none\", \"snps_exclusives\": \"No\", \"ranges\": {\"single_multi\": \"\", \"__current_case__\": 0}, \"thinning\": {\"thinning\": \"No\", \"__current_case__\": 0}, \"geno_rates\": {\"geno\": \"\", \"mind\": \"\"}, \"allele_freq\": {\"maf\": \"\", \"max_maf\": \"\", \"mac\": \"\", \"max_mac\": \"\"}, \"hwe\": {\"hwe\": \"No\", \"__current_case__\": 0}, \"sex_founder_filter\": {\"filter\": \"No\", \"__current_case__\": 0}}, \"inputs\": {\"inputs\": {\"filetype\": \"bfile\", \"__current_case__\": 0, \"bed\": {\"__class__\": \"RuntimeValue\"}, \"bim\": {\"__class__\": \"RuntimeValue\"}, \"fam\": {\"__class__\": \"RuntimeValue\"}}, \"set_pheno\": {\"set_pheno\": \"\", \"__current_case__\": 0}, \"covar_input\": {\"__class__\": \"RuntimeValue\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.9.b618+galaxy2",
+            "type": "tool",
+            "uuid": "20436ce0-c9c8-46a0-b02a-98bd4b51c864",
+            "workflow_outputs": []
+        },
+        "7": {
+            "annotation": "",
+            "content_id": "__EXTRACT_DATASET__",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "input": {
+                    "id": 6,
+                    "output_name": "plink_out"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Extract Dataset",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "data"
+                }
+            ],
+            "position": {
+                "bottom": 293.5,
+                "height": 112,
+                "left": 993.5,
+                "right": 1193.5,
+                "top": 181.5,
+                "width": 200,
+                "x": 993.5,
+                "y": 181.5
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutput": {
+                    "action_arguments": {
+                        "newtype": "pbed"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output"
+                },
+                "HideDatasetActionoutput": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output"
+                }
+            },
+            "tool_id": "__EXTRACT_DATASET__",
+            "tool_state": "{\"input\": {\"__class__\": \"ConnectedValue\"}, \"which\": {\"which_dataset\": \"first\", \"__current_case__\": 0}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "1603cc9b-cdc0-4a88-9d47-f5fbe7a670d5",
+            "workflow_outputs": []
+        },
+        "8": {
+            "annotation": "",
+            "content_id": "__EXTRACT_DATASET__",
+            "errors": null,
+            "id": 8,
+            "input_connections": {
+                "input": {
+                    "id": 6,
+                    "output_name": "plink_out"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Extract Dataset",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "data"
+                }
+            ],
+            "position": {
+                "bottom": 435.5,
+                "height": 112,
+                "left": 999.5,
+                "right": 1199.5,
+                "top": 323.5,
+                "width": 200,
+                "x": 999.5,
+                "y": 323.5
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutput": {
+                    "action_arguments": {
+                        "newtype": "tabular"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output"
+                },
+                "HideDatasetActionoutput": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output"
+                }
+            },
+            "tool_id": "__EXTRACT_DATASET__",
+            "tool_state": "{\"input\": {\"__class__\": \"ConnectedValue\"}, \"which\": {\"which_dataset\": \"by_identifier\", \"__current_case__\": 1, \"identifier\": \"plink_bim\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "1acdd414-c2ab-43b0-8a95-28203d991b61",
+            "workflow_outputs": []
+        },
+        "9": {
+            "annotation": "",
+            "content_id": "__EXTRACT_DATASET__",
+            "errors": null,
+            "id": 9,
+            "input_connections": {
+                "input": {
+                    "id": 6,
+                    "output_name": "plink_out"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Extract Dataset",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "data"
+                }
+            ],
+            "position": {
+                "bottom": 583.5,
+                "height": 112,
+                "left": 990.5,
+                "right": 1190.5,
+                "top": 471.5,
+                "width": 200,
+                "x": 990.5,
+                "y": 471.5
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutput": {
+                    "action_arguments": {
+                        "newtype": "txt"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output"
+                },
+                "HideDatasetActionoutput": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output"
+                }
+            },
+            "tool_id": "__EXTRACT_DATASET__",
+            "tool_state": "{\"input\": {\"__class__\": \"ConnectedValue\"}, \"which\": {\"which_dataset\": \"by_identifier\", \"__current_case__\": 1, \"identifier\": \"plink_fam\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "61862d7e-a9d3-4fbe-9b6a-d36a41824571",
+            "workflow_outputs": []
+        },
+        "10": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/plink/plink/1.9.b618+galaxy0",
+            "errors": null,
+            "id": 10,
+            "input_connections": {
+                "inputs|inputs|bed": {
+                    "id": 7,
+                    "output_name": "output"
+                },
+                "inputs|inputs|bim": {
+                    "id": 8,
+                    "output_name": "output"
+                },
+                "inputs|inputs|fam": {
+                    "id": 9,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool plink",
+                    "name": "inputs"
+                }
+            ],
+            "label": null,
+            "name": "plink",
+            "outputs": [
+                {
+                    "name": "plink_out",
+                    "type": "input"
+                },
+                {
+                    "name": "genome",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 482.5,
+                "height": 212,
+                "left": 1258.5,
+                "right": 1458.5,
+                "top": 270.5,
+                "width": 200,
+                "x": 1258.5,
+                "y": 270.5
+            },
+            "post_job_actions": {
+                "HideDatasetActionplink_out": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "plink_out"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/plink/plink/1.9.b618+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "66b35562554d",
+                "name": "plink",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"functions\": {\"func\": \"ibd\", \"__current_case__\": 6, \"genome\": {\"output_genome\": \"Yes\", \"__current_case__\": 1, \"min\": \"\", \"max\": \"\", \"ppc\": \"500\", \"modifiers\": null}}, \"inputs\": {\"inputs\": {\"filetype\": \"bfile\", \"__current_case__\": 0, \"bed\": {\"__class__\": \"RuntimeValue\"}, \"bim\": {\"__class__\": \"RuntimeValue\"}, \"fam\": {\"__class__\": \"RuntimeValue\"}}, \"set_pheno\": {\"set_pheno\": \"\", \"__current_case__\": 0}, \"covar_input\": {\"__class__\": \"RuntimeValue\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.9.b618+galaxy2",
+            "type": "tool",
+            "uuid": "ee7d33ea-96ad-4a3d-b43b-05e8580f5e8b",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "genome",
+                    "uuid": "b5847b5d-5e67-42dc-9290-75321139e381"
+                }
+            ]
+        },
+        "11": {
+            "annotation": "",
+            "content_id": "__EXTRACT_DATASET__",
+            "errors": null,
+            "id": 11,
+            "input_connections": {
+                "input": {
+                    "id": 10,
+                    "output_name": "plink_out"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Extract Dataset",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "data"
+                }
+            ],
+            "position": {
+                "bottom": 259.5,
+                "height": 112,
+                "left": 1510.5,
+                "right": 1710.5,
+                "top": 147.5,
+                "width": 200,
+                "x": 1510.5,
+                "y": 147.5
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutput": {
+                    "action_arguments": {
+                        "newtype": "pbed"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output"
+                },
+                "HideDatasetActionoutput": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output"
+                }
+            },
+            "tool_id": "__EXTRACT_DATASET__",
+            "tool_state": "{\"input\": {\"__class__\": \"ConnectedValue\"}, \"which\": {\"which_dataset\": \"first\", \"__current_case__\": 0}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "8e5b9e6b-2cfc-453a-b319-78ca60582f4b",
+            "workflow_outputs": []
+        },
+        "12": {
+            "annotation": "",
+            "content_id": "__EXTRACT_DATASET__",
+            "errors": null,
+            "id": 12,
+            "input_connections": {
+                "input": {
+                    "id": 10,
+                    "output_name": "plink_out"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Extract Dataset",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "data"
+                }
+            ],
+            "position": {
+                "bottom": 400,
+                "height": 112,
+                "left": 1496.5,
+                "right": 1696.5,
+                "top": 288,
+                "width": 200,
+                "x": 1496.5,
+                "y": 288
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutput": {
+                    "action_arguments": {
+                        "newtype": "tabular"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output"
+                },
+                "HideDatasetActionoutput": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output"
+                }
+            },
+            "tool_id": "__EXTRACT_DATASET__",
+            "tool_state": "{\"input\": {\"__class__\": \"ConnectedValue\"}, \"which\": {\"which_dataset\": \"by_identifier\", \"__current_case__\": 1, \"identifier\": \"plink_bim\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "82fbaecd-c6b3-4170-aaee-45038da91cca",
+            "workflow_outputs": []
+        },
+        "13": {
+            "annotation": "",
+            "content_id": "__EXTRACT_DATASET__",
+            "errors": null,
+            "id": 13,
+            "input_connections": {
+                "input": {
+                    "id": 10,
+                    "output_name": "plink_out"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Extract Dataset",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "data"
+                }
+            ],
+            "position": {
+                "bottom": 632,
+                "height": 112,
+                "left": 1510.5,
+                "right": 1710.5,
+                "top": 520,
+                "width": 200,
+                "x": 1510.5,
+                "y": 520
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutput": {
+                    "action_arguments": {
+                        "newtype": "txt"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output"
+                },
+                "HideDatasetActionoutput": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output"
+                }
+            },
+            "tool_id": "__EXTRACT_DATASET__",
+            "tool_state": "{\"input\": {\"__class__\": \"ConnectedValue\"}, \"which\": {\"which_dataset\": \"by_identifier\", \"__current_case__\": 1, \"identifier\": \"plink_fam\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "78ad2838-180f-423a-aeda-d23066af5348",
+            "workflow_outputs": []
+        },
+        "14": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/plink/plink/1.9.b618+galaxy0",
+            "errors": null,
+            "id": 14,
+            "input_connections": {
+                "functions|read_genome": {
+                    "id": 10,
+                    "output_name": "genome"
+                },
+                "inputs|inputs|bed": {
+                    "id": 11,
+                    "output_name": "output"
+                },
+                "inputs|inputs|bim": {
+                    "id": 12,
+                    "output_name": "output"
+                },
+                "inputs|inputs|fam": {
+                    "id": 13,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool plink",
+                    "name": "functions"
+                },
+                {
+                    "description": "runtime parameter for tool plink",
+                    "name": "inputs"
+                }
+            ],
+            "label": null,
+            "name": "plink",
+            "outputs": [
+                {
+                    "name": "plink_out",
+                    "type": "input"
+                },
+                {
+                    "name": "mds",
+                    "type": "txt"
+                },
+                {
+                    "name": "cluster1",
+                    "type": "tabular"
+                },
+                {
+                    "name": "cluster2",
+                    "type": "tabular"
+                },
+                {
+                    "name": "cluster3",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 602,
+                "height": 352,
+                "left": 1801.5,
+                "right": 2001.5,
+                "top": 250,
+                "width": 200,
+                "x": 1801.5,
+                "y": 250
+            },
+            "post_job_actions": {
+                "RenameDatasetActionplink_out": {
+                    "action_arguments": {
+                        "newname": "Workflow 2 main output"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "plink_out"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/plink/plink/1.9.b618+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "66b35562554d",
+                "name": "plink",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"functions\": {\"func\": \"stratification\", \"__current_case__\": 4, \"read_genome\": {\"__class__\": \"RuntimeValue\"}, \"cluster\": {\"cluster\": \"Yes\", \"__current_case__\": 1, \"modifiers\": null, \"mds\": {\"mds_scaling\": \"Yes\", \"__current_case__\": 1, \"dimensions\": \"10\", \"modifiers\": null}}}, \"inputs\": {\"inputs\": {\"filetype\": \"bfile\", \"__current_case__\": 0, \"bed\": {\"__class__\": \"RuntimeValue\"}, \"bim\": {\"__class__\": \"RuntimeValue\"}, \"fam\": {\"__class__\": \"RuntimeValue\"}}, \"set_pheno\": {\"set_pheno\": \"\", \"__current_case__\": 0}, \"covar_input\": {\"__class__\": \"RuntimeValue\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.9.b618+galaxy2",
+            "type": "tool",
+            "uuid": "1deccbca-cd87-4f9b-9fd1-6b8b7fcc339b",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "cluster1",
+                    "uuid": "cf73b0fc-b610-4c69-972c-0a1b1f389c3f"
+                },
+                {
+                    "label": null,
+                    "output_name": "cluster2",
+                    "uuid": "9702b47e-4b22-4eac-bc10-f6b61471995e"
+                },
+                {
+                    "label": null,
+                    "output_name": "cluster3",
+                    "uuid": "cfcf85e3-fc71-4808-b969-eb9af327880e"
+                },
+                {
+                    "label": "Plink main outputs",
+                    "output_name": "plink_out",
+                    "uuid": "cf185c38-3d1f-4284-af23-229279c28df1"
+                },
+                {
+                    "label": null,
+                    "output_name": "mds",
+                    "uuid": "15fdc255-15b2-4a0c-83c3-5a517e57b460"
+                }
+            ]
+        },
+        "15": {
+            "annotation": "",
+            "content_id": "Convert characters1",
+            "errors": null,
+            "id": 15,
+            "input_connections": {
+                "input": {
+                    "id": 14,
+                    "output_name": "mds"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Convert",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 424.5,
+                "height": 92,
+                "left": 2040.5,
+                "right": 2240.5,
+                "top": 332.5,
+                "width": 200,
+                "x": 2040.5,
+                "y": 332.5
+            },
+            "post_job_actions": {
+                "HideDatasetActionout_file1": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
+            "tool_id": "Convert characters1",
+            "tool_state": "{\"condense\": \"true\", \"convert_from\": \"s\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"strip\": \"true\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "39318317-a582-48ad-8ddc-d41774be121f",
+            "workflow_outputs": []
+        },
+        "16": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/1.1.1",
+            "errors": null,
+            "id": 16,
+            "input_connections": {
+                "infile": {
+                    "id": 15,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Text reformatting",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 514.5,
+                "height": 92,
+                "left": 2296.5,
+                "right": 2496.5,
+                "top": 422.5,
+                "width": 200,
+                "x": 2296.5,
+                "y": 422.5
+            },
+            "post_job_actions": {
+                "RenameDatasetActionoutfile": {
+                    "action_arguments": {
+                        "newname": "Covar file"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "outfile"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/1.1.1",
+            "tool_shed_repository": {
+                "changeset_revision": "e39fceb6ab85",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"code\": \"{print$1, $2, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13}\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.0",
+            "type": "tool",
+            "uuid": "20196d76-521a-4391-b9e5-af58408d012c",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "outfile",
+                    "uuid": "6a022481-ad11-4b62-a238-c2917954484f"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "166e05d4-f98a-457f-947f-710f304d1063",
+    "version": 15
+}
